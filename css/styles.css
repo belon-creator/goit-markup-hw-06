@@ -21,7 +21,6 @@ html {
   margin: 0;
   padding: 0;
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   margin: 0 auto;
   height: 50px;
@@ -47,10 +46,16 @@ html {
   font-weight: 300;
   padding-right: 15px;
   padding-left: 15px;
+  transform: scale(1);
+  /* transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
 }
 .top-header-list-item a:hover,
 .top-header-list-item a:focus {
   color: var(--text-color);
+  transform: scale(1.2);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .tel::before {
   display: inline-block;
@@ -101,6 +106,7 @@ html {
   font-family: var(--font);
   text-decoration: none;
   text-transform: uppercase;
+  transform: scale(1);
 }
 .logo {
   margin: 0;
@@ -115,6 +121,9 @@ html {
 .navigation a:hover,
 .navigation a:focus {
   color: #1abc9c;
+  transform: scale(1.2);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .menu-list-item a {
   padding-right: 15px;
@@ -251,6 +260,8 @@ html {
 .nc {
   background-color: #fff;
 }
+/* .product-list-item:hover .for-hover {
+} */
 /* featured products */
 .for-hover {
   position: relative;
@@ -263,17 +274,21 @@ html {
   flex-wrap: wrap;
   justify-content: center;
   bottom: 40px;
-  transform: translateX(10px);
+  right: 10px;
   width: 234px;
   height: 260px;
   background-color: rgba(0, 0, 0, 0.53);
   opacity: 0;
+  transform: translateY(100%);
+  transition-duration: 1000ms;
 }
 
 .img-hover-list {
   list-style: none;
   margin: 0;
   padding: 0;
+  transition-delay: 1000ms;
+  transition-duration: 1000ms;
 }
 .img-button {
   position: relative;
@@ -288,6 +303,7 @@ html {
 .img-hover:hover,
 .img-hover:focus {
   opacity: 1;
+  transform: translateY(0);
 }
 .img-button::before {
   content: "";
@@ -301,7 +317,6 @@ html {
 .like::before {
   background-image: url(../images/icons/like.png);
 }
-
 .share::before {
   background-image: url(../images/icons/share.png);
 }
@@ -403,6 +418,7 @@ html {
 .description-link {
   display: flex;
   text-decoration: none;
+  overflow: hidden;
 }
 
 .product-name {
@@ -570,9 +586,8 @@ html {
   overflow: hidden;
 }
 .active-btn:hover {
-  color: #255784;
-  background: #07ed44;
-  box-shadow: 0 0 10px #07ed44, 0 0 40px #07ed44, 0 0 80px #07ed44;
+  background: #19bb9b;
+  box-shadow: 0 0 10px #28362a, 0 0 40px #19bb9b, 0 0 80px #28362a;
   transition-delay: 1s;
 }
 .active-btn span {
@@ -584,7 +599,7 @@ html {
   left: -100%;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, transparent, #07ed44);
+  background: linear-gradient(90deg, transparent, #28362a);
 }
 .active-btn:hover span:nth-child(1) {
   left: 100%;
@@ -595,7 +610,7 @@ html {
   right: -100%;
   width: 100%;
   height: 3px;
-  background: linear-gradient(270deg, transparent, #07ed44);
+  background: linear-gradient(270deg, transparent, #28362a);
 }
 .active-btn:hover span:nth-child(3) {
   right: 100%;
@@ -607,7 +622,7 @@ html {
   right: 0;
   width: 3px;
   height: 100%;
-  background: linear-gradient(180deg, transparent, #07ed44);
+  background: linear-gradient(180deg, transparent, #28362a);
 }
 .active-btn:hover span:nth-child(2) {
   top: 100%;
@@ -619,10 +634,16 @@ html {
   left: 0;
   width: 3px;
   height: 100%;
-  background: linear-gradient(360deg, transparent, #07ed44);
+  background: linear-gradient(360deg, transparent, #28362a);
 }
 .active-btn:hover span:nth-child(4) {
   bottom: 100%;
   transition: 1s;
   transition-delay: 0.75s;
 }
+
+/* .pulse {
+  color: #4ec6ab;
+  text-shadow: 0px 0px 5px #fe1800, 0px 0px 7px #dbbcb8;
+  animation: blur 1500ms linear infinite;
+} */
