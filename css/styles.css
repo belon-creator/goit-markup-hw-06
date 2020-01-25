@@ -47,13 +47,11 @@ html {
   padding-right: 15px;
   padding-left: 15px;
   transform: scale(1);
-  /* transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
 }
 .top-header-list-item a:hover,
 .top-header-list-item a:focus {
   color: var(--text-color);
-  transform: scale(1.2);
+  transform: scale(1.4);
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -121,7 +119,7 @@ html {
 .navigation a:hover,
 .navigation a:focus {
   color: #1abc9c;
-  transform: scale(1.2);
+  transform: scale(1.4);
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -189,11 +187,70 @@ html {
   cursor: pointer;
   z-index: 2;
   transform: translate(580px, 270px);
-  /* transform: translateY(250px); */
 }
 .banner a:hover,
 .banner a:focus {
   color: var(--text-color);
+}
+
+.active-btn {
+  overflow: hidden;
+}
+.active-btn:hover {
+  background: #19bb9b;
+  box-shadow: 0 0 10px #28362a, 0 0 40px #19bb9b, 0 0 80px #28362a;
+  transition-delay: 1s;
+}
+.active-btn span {
+  position: absolute;
+  display: block;
+}
+.active-btn span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #28362a);
+}
+.active-btn:hover span:nth-child(1) {
+  left: 100%;
+  transition: 1s;
+}
+.active-btn span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(270deg, transparent, #28362a);
+}
+.active-btn:hover span:nth-child(3) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+.active-btn span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #28362a);
+}
+.active-btn:hover span:nth-child(2) {
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+.active-btn span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #28362a);
+}
+.active-btn:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
 }
 /* about list */
 
@@ -220,7 +277,7 @@ html {
   text-align: center;
 }
 .about-header {
-  margin: 0 aoto;
+  margin: 0 auto;
   margin-bottom: 24px;
 }
 .about-txt {
@@ -260,15 +317,11 @@ html {
 .nc {
   background-color: #fff;
 }
-/* .product-list-item:hover .for-hover {
-} */
+
 /* featured products */
-.for-hover {
-  position: relative;
-}
+
 .img-hover {
   position: absolute;
-  overflow: hidden;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
@@ -280,15 +333,21 @@ html {
   background-color: rgba(0, 0, 0, 0.53);
   opacity: 0;
   transform: translateY(100%);
-  transition-duration: 1000ms;
+  transition-duration: 250ms;
+}
+
+.img-hover:hover,
+.img-hover:focus {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .img-hover-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  transition-delay: 1000ms;
-  transition-duration: 1000ms;
+  transition-delay: 250ms;
+  transition-duration: 250ms;
 }
 .img-button {
   position: relative;
@@ -299,12 +358,15 @@ html {
   margin-right: 8px;
   margin-top: 78px;
   cursor: pointer;
+  transition-duration: 250ms;
+  transition-delay: 250ms;
 }
-.img-hover:hover,
-.img-hover:focus {
-  opacity: 1;
-  transform: translateY(0);
+
+.img-button:hover,
+.img-button:focus {
+  background-color: #1abc9c;
 }
+
 .img-button::before {
   content: "";
   display: block;
@@ -349,11 +411,6 @@ html {
   font-family: var(--font);
 }
 
-.img-button:hover,
-.img-button:focus {
-  background-color: #1abc9c;
-}
-
 .content {
   display: flex;
   flex-wrap: wrap;
@@ -395,30 +452,42 @@ html {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 30px;
+  overflow: hidden;
 }
-
+.product-list-item:hover .img-hover {
+  transform: translateY(0);
+}
 .product-list-item:nth-last-child(-n + 4) {
   margin-bottom: 0;
 }
 
 .product-list-item:hover .product-name {
   background-color: #1abc9c;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .product-list-item:hover .price {
   background-color: #7fd9c7;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .description-link:focus .product-name {
   background-color: #1abc9c;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .description-link:focus .price {
   background-color: #7fd9c7;
+  transition-duration: 10000ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .description-link {
   display: flex;
   text-decoration: none;
-  overflow: hidden;
+  transition-duration: 10000ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .product-name {
@@ -582,65 +651,6 @@ html {
 }
 
 /* animation */
-.active-btn {
-  overflow: hidden;
-}
-.active-btn:hover {
-  background: #19bb9b;
-  box-shadow: 0 0 10px #28362a, 0 0 40px #19bb9b, 0 0 80px #28362a;
-  transition-delay: 1s;
-}
-.active-btn span {
-  position: absolute;
-  display: block;
-}
-.active-btn span:nth-child(1) {
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #28362a);
-}
-.active-btn:hover span:nth-child(1) {
-  left: 100%;
-  transition: 1s;
-}
-.active-btn span:nth-child(3) {
-  bottom: 0;
-  right: -100%;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(270deg, transparent, #28362a);
-}
-.active-btn:hover span:nth-child(3) {
-  right: 100%;
-  transition: 1s;
-  transition-delay: 0.5s;
-}
-.active-btn span:nth-child(2) {
-  top: -100%;
-  right: 0;
-  width: 3px;
-  height: 100%;
-  background: linear-gradient(180deg, transparent, #28362a);
-}
-.active-btn:hover span:nth-child(2) {
-  top: 100%;
-  transition: 1s;
-  transition-delay: 0.25s;
-}
-.active-btn span:nth-child(4) {
-  bottom: -100%;
-  left: 0;
-  width: 3px;
-  height: 100%;
-  background: linear-gradient(360deg, transparent, #28362a);
-}
-.active-btn:hover span:nth-child(4) {
-  bottom: 100%;
-  transition: 1s;
-  transition-delay: 0.75s;
-}
 
 /* .pulse {
   color: #4ec6ab;
