@@ -151,11 +151,7 @@ html {
 
 .banner-description,
 .banner-description-bold {
-  /* position: absolute; */
   margin: 0;
-  /* top: 140px; */
-  /* left: 50%; */
-  /* transform: translateX(-50%); */
   text-transform: uppercase;
   font-size: 48px;
   color: #fff;
@@ -191,7 +187,6 @@ html {
   color: #fff;
   cursor: pointer;
   z-index: 2;
-  /* transform: translate(580px, 270px); */
 }
 .banner a:hover,
 .banner a:focus {
